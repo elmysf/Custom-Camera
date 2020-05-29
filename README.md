@@ -1,2 +1,2 @@
 # Custom-Camera
-Learn CustomCamera with Edo Lorenza
+Learn Custom Camera with CoreML

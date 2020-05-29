@@ -9,9 +9,12 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var LibraryBtn: UIButton!
+    @IBOutlet weak var FlashBtn: UIButton!
+    
     
          var captureSession = AVCaptureSession()
          var backCamera: AVCaptureDevice?
@@ -28,6 +31,7 @@ class ViewController: UIViewController {
          
          var zoomInGestureRecognizer = UISwipeGestureRecognizer()
          var zoomOutGestureRecognizer = UISwipeGestureRecognizer()
+         var flashMode = AVCaptureDevice.FlashMode.off
       
           override func viewDidLoad() {
                  super.viewDidLoad()
@@ -161,6 +165,17 @@ class ViewController: UIViewController {
                      }
                  }
              }
+    
+
+    @IBAction func LibraryBtn(_ sender: Any) {
+            let picker : UIImagePickerController = UIImagePickerController()
+            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            picker.delegate = self
+            picker.allowsEditing = false
+            self.present(picker, animated: true, completion: nil)
+    }
+    
     @IBAction func cameraButton(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
                self.photoOutput?.capturePhoto(with: settings, delegate: self)

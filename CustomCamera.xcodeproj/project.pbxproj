@@ -15,6 +15,7 @@
 		F0006D41247FB8D800AFC0C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0006D40247FB8D800AFC0C4 /* Assets.xcassets */; };
 		F0006D44247FB8D800AFC0C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0006D42247FB8D800AFC0C4 /* LaunchScreen.storyboard */; };
 		F0006D4C247FBD1900AFC0C4 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006D4B247FBD1900AFC0C4 /* PreviewViewController.swift */; };
+		F025AB03248091F90016F3FE /* WasteClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F025AB02248091F90016F3FE /* WasteClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F0006D43247FB8D800AFC0C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0006D45247FB8D800AFC0C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0006D4B247FBD1900AFC0C4 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		F025AB02248091F90016F3FE /* WasteClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WasteClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				F0006D36247FB8D700AFC0C4 /* SceneDelegate.swift */,
 				F0006D38247FB8D700AFC0C4 /* ViewController.swift */,
 				F0006D4B247FBD1900AFC0C4 /* PreviewViewController.swift */,
+				F025AB02248091F90016F3FE /* WasteClassifier.mlmodel */,
 				F0006D3A247FB8D700AFC0C4 /* Main.storyboard */,
 				F0006D40247FB8D800AFC0C4 /* Assets.xcassets */,
 				F0006D42247FB8D800AFC0C4 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				F0006D3F247FB8D700AFC0C4 /* CustomCamera.xcdatamodeld in Sources */,
 				F0006D35247FB8D700AFC0C4 /* AppDelegate.swift in Sources */,
 				F0006D4C247FBD1900AFC0C4 /* PreviewViewController.swift in Sources */,
+				F025AB03248091F90016F3FE /* WasteClassifier.mlmodel in Sources */,
 				F0006D37247FB8D700AFC0C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

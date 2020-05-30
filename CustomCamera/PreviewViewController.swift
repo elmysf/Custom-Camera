@@ -1,20 +1,21 @@
  //
-//  PreviewViewController.swift
-//  CustomCamera
-//
-//  Created by Sufiandy Elmy on 28/05/20.
-//  Copyright © 2020 Sufiandy Elmy. All rights reserved.
-//
-
-import UIKit
-import CoreML
-import Vision
+ //  PreviewViewController.swift
+ //  CustomCamera
+ //
+ //  Created by Sufiandy Elmy on 28/05/20.
+ //  Copyright © 2020 Sufiandy Elmy. All rights reserved.
+ //
  
-class PreviewViewController: UIViewController {
-
+ import UIKit
+ import CoreML
+ import Vision
+ 
+ class PreviewViewController: UIViewController {
+    
     @IBOutlet weak var ResultPhoto: UIImageView!
     @IBOutlet weak var photoView: UIImageView!
     var image:UIImage!
+    var name:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +23,23 @@ class PreviewViewController: UIViewController {
         // Do any additional setup after loading the view.
         detectPhoto(image: photoView.image!)
         view.showLoadingView(inView: view)
+        name = "nodata"
     }
     
-
+    
     @IBAction func cancelButton(_ sender: Any) {
-            dismiss(animated: true, completion: nil)
-        }
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func saveButton(_ sender: Any) {
         guard let imageToSave = image else {
-                return
-            }
-            
-            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
-            dismiss(animated: true, completion: nil)
+            return
         }
+        guard let newData = CoreDataManager.shared.createWaste(name: name, image: imageToSave) else { return }
+        print("Created \(newData)")
+        
+        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+        dismiss(animated: true, completion: nil)
+    }
     func detectPhoto(image: UIImage) {
         //load coreml model
         guard let ciImage = CIImage(image: image) else {
@@ -52,18 +56,19 @@ class PreviewViewController: UIViewController {
                     fatalError("Unexpected result")
             }
             DispatchQueue.main.async {
-                let imageName = firstResult.identifier.contains ("Can") ? "Can" : "No Waste"
-                _ = firstResult.identifier.contains ("Bottle") ? "Botlle" : "No Waste"
-                _ = firstResult.identifier.contains ("Glass") ? "Glass" : "No Waste"
-                self.ResultPhoto.image = UIImage(named: imageName)
+                if(firstResult.identifier.contains("Can")){
+                    self.name = "Can"
+                }else if(firstResult.identifier.contains("Bottle")){
+                    self.name = "Bottle"
+                }else if(firstResult.identifier.contains ("Glass")){
+                    
+                }else{
+                   self.name = "No Waste"
+                }
+              
+                self.ResultPhoto.image = UIImage(named: self.name)
                 self.view.hideLoadingView()
-//                if firstResult.identifier.contains("Can") {
- //               print("Can")
-//                    self.ResultPhoto.image = UIImage(named: "Can")
-//                } else {
-//                    print("No Waste")
-//                    self.ResultPhoto.image = UIImage(named: "No Waste")
-//                }
+               
             }
         }
         let handler = VNImageRequestHandler(ciImage: ciImage)
@@ -76,7 +81,7 @@ class PreviewViewController: UIViewController {
                 }
         }
     }
-}
+ }
  var loadingView = UIView ()
  var animateImg = UIImageView(frame:  CGRect(x: 0, y: 0, width: 100, height: 100 ))
  extension UIView {

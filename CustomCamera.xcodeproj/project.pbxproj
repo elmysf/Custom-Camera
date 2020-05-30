@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605A93692482C469005E44BD /* ListDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A93682482C469005E44BD /* ListDataViewController.swift */; };
+		605A936B2482C592005E44BD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A936A2482C592005E44BD /* CoreDataManager.swift */; };
 		F0006D35247FB8D700AFC0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006D34247FB8D700AFC0C4 /* AppDelegate.swift */; };
 		F0006D37247FB8D700AFC0C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006D36247FB8D700AFC0C4 /* SceneDelegate.swift */; };
 		F0006D39247FB8D700AFC0C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006D38247FB8D700AFC0C4 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		605A93682482C469005E44BD /* ListDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataViewController.swift; sourceTree = "<group>"; };
+		605A936A2482C592005E44BD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F0006D31247FB8D700AFC0C4 /* CustomCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0006D34247FB8D700AFC0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0006D36247FB8D700AFC0C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				F0006D42247FB8D800AFC0C4 /* LaunchScreen.storyboard */,
 				F0006D45247FB8D800AFC0C4 /* Info.plist */,
 				F0006D3D247FB8D700AFC0C4 /* CustomCamera.xcdatamodeld */,
+				605A93682482C469005E44BD /* ListDataViewController.swift */,
+				605A936A2482C592005E44BD /* CoreDataManager.swift */,
 			);
 			path = CustomCamera;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 				F0006D4C247FBD1900AFC0C4 /* PreviewViewController.swift in Sources */,
 				F025AB03248091F90016F3FE /* WasteClassifier.mlmodel in Sources */,
 				F0006D37247FB8D700AFC0C4 /* SceneDelegate.swift in Sources */,
+				605A936B2482C592005E44BD /* CoreDataManager.swift in Sources */,
+				605A93692482C469005E44BD /* ListDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T6A37YY89;
+				DEVELOPMENT_TEAM = TVFQAT4MZP;
 				INFOPLIST_FILE = CustomCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,7 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T6A37YY89;
+				DEVELOPMENT_TEAM = TVFQAT4MZP;
 				INFOPLIST_FILE = CustomCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
